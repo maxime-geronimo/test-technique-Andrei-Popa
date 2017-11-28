@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ImageEditPost;
 use App\Http\Requests\ImageUploadPost;
 use App\Image;
-use Appstract\BootstrapComponents\BootstrapComponentsClass;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 /**
@@ -75,17 +73,13 @@ class ImageController extends Controller
     }
 
     /**
-     * @param Image                    $image
-     * @param BootstrapComponentsClass $bootstrapComponentsClass
-     * @param Request                  $request
+     * @param Image $image
      *
      * @return View
      */
-    public function index(Image $image, BootstrapComponentsClass $bootstrapComponentsClass, Request $request) {
-        $images = $image->all();
+    public function index(Image $image) {
         return view('main')->with([
-            'images' => $images,
-            'pagination' => $bootstrapComponentsClass->pagination($images, $request->get('page'), 6, '', ['arrows' => true]),
+            'images' => $image->paginate(6),
             'default' => $image->where('is_default', 1)->first()
         ]);
     }

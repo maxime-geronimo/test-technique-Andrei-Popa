@@ -25,3 +25,19 @@
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+#front__max_width {
+    max-width: 50%;
+}
+
+.pagination.center,
+.pagination.center ul {
+    float: left;
+    position: relative;
+}
+.pagination.center { left: 50%; }
+.pagination.center ul { left: -50%;}
+
+.border-black{
+    border: black solid 5px;
+}
