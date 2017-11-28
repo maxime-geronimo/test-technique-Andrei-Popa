@@ -7,7 +7,7 @@
 
     <div class="row" >
         <div class="col-lg-12">
-            <img class="img-fluid"
+            <img class="img-fluid block-display padding-buffer"
              src="{{ url((config('image.display_path') . DIRECTORY_SEPARATOR . $image->name)) }}">
         </div>
     </div>
@@ -28,7 +28,7 @@
 
         <div class="col-lg-12 text-center">
             @if(Session::has('success') && Session::get('success') == true)
-                <p class="text-info">File edited successfully</p>
+                <h4 class="text-white">File edited successfully</h4>
             @endif
         </div>
 

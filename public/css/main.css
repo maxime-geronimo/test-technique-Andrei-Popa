@@ -16,3 +16,12 @@
 
 .top-buffer { margin-top:20px; }
 .bottom-buffer { margin-bottom:20px; }
+.block-display {
+    display: block;
+    margin: 0 auto;
+}
+
+.padding-buffer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
