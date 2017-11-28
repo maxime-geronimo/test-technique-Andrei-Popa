@@ -75,7 +75,9 @@ class ImageController extends Controller
     }
 
     /**
-     * @param Image $image
+     * @param Image                    $image
+     * @param BootstrapComponentsClass $bootstrapComponentsClass
+     * @param Request                  $request
      *
      * @return View
      */

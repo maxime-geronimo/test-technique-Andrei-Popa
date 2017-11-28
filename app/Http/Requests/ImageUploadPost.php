@@ -4,6 +4,11 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * Class ImageUploadPost
+ *
+ * @package App\Http\Requests
+ */
 class ImageUploadPost extends FormRequest
 {
     /**
