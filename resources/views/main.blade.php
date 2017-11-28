@@ -9,8 +9,7 @@
                 <img class="img-fluid"
                      src="{{ url((config('image.display_path') . DIRECTORY_SEPARATOR . $default->name)) }}">
             @else
-                <h4>It looks like you don't have any pictures uploaded for now.</h4>
-                <h4>Or you haven't yet chosen a default one.</h4>
+                <h4>No default image chosen</h4>
             @endif
         </div>
         <div class="col-lg-4 offset-lg-1">

@@ -12,6 +12,9 @@ use Illuminate\Database\Eloquent\Model;
 class Image extends Model
 {
 
+    /**
+     * @var array
+     */
     protected $columns = [
         'title',
         'description',

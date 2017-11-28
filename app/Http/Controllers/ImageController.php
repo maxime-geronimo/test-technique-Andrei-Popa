@@ -9,6 +9,11 @@ use Appstract\BootstrapComponents\BootstrapComponentsClass;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
+/**
+ * Class ImageController
+ *
+ * @package App\Http\Controllers
+ */
 class ImageController extends Controller
 {
     /**
@@ -105,5 +110,26 @@ class ImageController extends Controller
         }
 
         throw new \Exception('Unable to process file');
+    }
+
+    /**
+     * @param       $id
+     * @param Image $image
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
+     */
+    public function delete($id, Image $image) {
+        $image = $image->where('id', $id)->first();
+
+        if(\File::exists(config('image.storage_folder'), $image->name)) {
+            \File::delete(config('image.storage_folder') . DIRECTORY_SEPARATOR . $image->name);
+        }
+
+        if($image->delete()) {
+            return redirect()->route('main')->with(['delete_success' => true]);
+        }
+
+        throw new \Exception('Unable to process changes');
     }
 }

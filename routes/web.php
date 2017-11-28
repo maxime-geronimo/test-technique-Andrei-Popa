@@ -29,3 +29,7 @@ Route::get('edit/{id}', [
 Route::post('edit/{id}', [
     'as' => 'editProcess', 'uses' => 'ImageController@editProcess'
 ]);
+
+Route::any('delete/{id}', [
+    'as' => 'delete', 'uses' => 'ImageController@delete'
+]);

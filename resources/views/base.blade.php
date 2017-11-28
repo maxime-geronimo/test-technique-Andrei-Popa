@@ -19,5 +19,8 @@
     @yield('content')
 </div>
 
+<script type="text/javascript" src="{{ URL::to('js/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ URL::to('js/tether/dist/js/tether.js') }}"></script>
+<script type="text/javascript" src="{{ URL::to('js/bootstrap.min.js') }}"></script>
 </body>
 </html>

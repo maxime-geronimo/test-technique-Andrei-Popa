@@ -3,6 +3,8 @@
 @section('title', 'Edit Picture')
 
 @section('content')
+
+
     <div class="row" >
         <div class="col-lg-12">
             <img class="img-fluid"
@@ -47,6 +49,32 @@
                     <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
                 </fieldset>
             </form>
+        </div>
+    </div>
+
+    <div class="row top-buffer bottom-buffer">
+        <div class="col-lg-12 text-center">
+            <button type="button" class="btn btn-danger btn-lg btn-block" data-href="{{ route('delete', ['id' => $image->id]) }}" data-toggle="modal" data-target="#confirm-delete">
+                Delete
+            </button>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    Confirm deletion
+                </div>
+                <div class="modal-body">
+                    This action cannot be undone. Are you sure you wish to continue?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <a href="{{ route('delete', ['id' => $image->id]) }}" class="btn btn-danger btn-ok">Delete</a>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
